@@ -1,0 +1,17 @@
+ipywidgets
+ipykernel
+transformers
+accelerate
+peft
+trl
+datasets
+torch
+mlflow 
+bitsandbytes
+azureml
+azureml-sdk
+azure-ai-ml
+pandas
+pyarrow
+azureml-fsspec
+
