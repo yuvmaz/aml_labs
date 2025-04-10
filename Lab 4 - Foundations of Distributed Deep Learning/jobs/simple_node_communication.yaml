@@ -1,0 +1,14 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+command: python simple_node_communication.py
+code: ../src
+environment:
+  image: mcr.microsoft.com/azureml/curated/acpt-pytorch-2.2-cuda12.1:latest
+distribution:
+  type: pytorch
+  process_count_per_instance: 1
+resources:
+  instance_count: 4
+  instance_type: Standard_DS3_v2
+display_name: simple-node-communication
+experiment_name: distributed-training-foundations
+description: Run a simple PyTorch distributed program for communicating between nodes

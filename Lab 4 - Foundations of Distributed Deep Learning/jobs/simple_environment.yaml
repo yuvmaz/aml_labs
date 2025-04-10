@@ -1,0 +1,13 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+command: env | sort | grep -e 'WORLD' -e 'RANK' -e 'MASTER' -e 'NODE'
+environment:
+  image: library/python:latest
+distribution:
+  type: pytorch
+  process_count_per_instance: 3
+resources:
+  instance_count: 2
+  instance_type: Standard_DS3_v2
+display_name: simple-env-vars-display
+experiment_name: distributed-training-foundations
+description: Run a simple two-node job in order to view the environment variables produced by Azure ML

@@ -1,0 +1,16 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+command: NCCL_DEBUG=WARN python simple_gpu_communication.py
+code: ../src
+environment:
+  image: mcr.microsoft.com/azureml/curated/acpt-pytorch-2.2-cuda12.1:latest
+distribution:
+  type: pytorch
+  process_count_per_instance: 1
+queue_settings:
+   job_tier: Spot
+resources:
+  instance_count: 2
+  instance_type: Standard_NC4as_T4_v3
+display_name: simple-gpu-communication
+experiment_name: distributed-training-foundations
+description: Run a simple PyTorch distributed program for communicating between GPU nodes
